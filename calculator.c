@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// Function prototypes
 int add(int i, int j) {
     return (i + j);
 }
@@ -20,6 +21,25 @@ float divide(int i, int j) {
     return ((float) i / j);  // Explicit type casting to float for decimal results.
 }
 
+// Function to calculate the square of a number
+int square(int i) {
+    return i * i;
+}
+
+// Function to calculate the cube of a number
+int cube(int i) {
+    return i * i * i;
+}
+
+// Function to calculate the inverse of a number
+float inverse(int i) {
+    if (i == 0) {
+        printf("Error: Division by zero is not allowed.\n");
+        return 0; // Handle division by zero
+    }
+    return 1.0 / i; // Calculate the inverse
+}
+
 int main() {
     int a, b;
     char operation;
@@ -34,7 +54,7 @@ int main() {
         printf("^: Square of a number\n");
         printf("#: Cube of a number\n");
         printf("i: Inverse of a number\n");
-        
+
         printf("Enter operation: ");
         scanf(" %c", &operation);
 
@@ -64,17 +84,17 @@ int main() {
             case '^':
                 printf("Enter an integer: ");
                 scanf("%d", &a);
-                printf("Will be implemented soon...\n");
+                printf("The square of %d is %d\n", a, square(a));
                 break;
             case '#':
                 printf("Enter an integer: ");
                 scanf("%d", &a);
-                printf("Will be implemented soon...\n");
+                printf("The cube of %d is %d\n", a, cube(a));
                 break;
             case 'i':
                 printf("Enter an integer: ");
                 scanf("%d", &a);
-                printf("Will be implemented soon...\n");
+                printf("The inverse of %d is %.2f\n", a, inverse(a));
                 break;
             default:
                 printf("Invalid operation. Please try again.\n");
@@ -86,3 +106,4 @@ int main() {
 
     return 0;
 }
+
